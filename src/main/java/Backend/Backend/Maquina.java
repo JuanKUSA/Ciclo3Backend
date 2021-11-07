@@ -22,7 +22,7 @@ import javax.persistence.Table;
  * @author Juan Valero
  */
 @Entity
-@Table(name = "maquina")
+@Table(name = "machine")
 public class Maquina implements Serializable{
     
     @Id
@@ -38,12 +38,12 @@ public class Maquina implements Serializable{
     @JsonIgnoreProperties("machines")
     private Categoria category;
 
-     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "maquina")
-    @JsonIgnoreProperties({"maquina", "client"})
+     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "machine")
+    @JsonIgnoreProperties({"machine", "client"})
     private List<Mensaje> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "maquina")
-    @JsonIgnoreProperties({"maquina", "client"})
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "machine")
+    @JsonIgnoreProperties({"machine", "client"})
     private List<Reservaciones> reservations;
 
     public Integer getId() {
