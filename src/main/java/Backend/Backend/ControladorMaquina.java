@@ -39,24 +39,24 @@ public class ControladorMaquina {
     }
 
     @GetMapping("/{id}")
-    public Optional<Maquina> getMaquina(@PathVariable("id") int maquinaId) {
-        return servicio.getMaquina(maquinaId);
+    public Optional<Maquina> getMaquina(@PathVariable("id") int machineId) {
+        return servicio.getMaquina(machineId);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Maquina save(@RequestBody Maquina maquina) {
-        return servicio.save(maquina);
+    public Maquina save(@RequestBody Maquina machine) {
+        return servicio.save(machine);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Maquina update(@RequestBody Maquina maquina) {
-        return servicio.update(maquina);
+    public Maquina update(@RequestBody Maquina machine) {
+        return servicio.update(machine);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") int maquinaId) {
-        return servicio.deleteMaquina(maquinaId);
+    public boolean delete(@PathVariable("id") int machineId) {
+        return servicio.deleteMaquina(machineId);
     } 
 }

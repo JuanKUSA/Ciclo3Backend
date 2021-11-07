@@ -22,56 +22,56 @@ public class ServiciosMaquina {
         return metodosCrud.getAll();
     }
 
-    public Optional<Maquina> getMaquina(int maquinaId) {
-        return metodosCrud.getMaquina(maquinaId);
+    public Optional<Maquina> getMaquina(int machineId) {
+        return metodosCrud.getMaquina(machineId);
     }
 
-    public Maquina save(Maquina maquina){
-        if(maquina.getId()==null){
-            return metodosCrud.save(maquina);
+    public Maquina save(Maquina machine){
+        if(machine.getId()==null){
+            return metodosCrud.save(machine);
         }else{
-            Optional<Maquina> e=metodosCrud.getMaquina(maquina.getId());
+            Optional<Maquina> e=metodosCrud.getMaquina(machine.getId());
             if(e.isEmpty()){
-                return metodosCrud.save(maquina);
+                return metodosCrud.save(machine);
             }else{
-                return maquina;
+                return machine;
             }
         }
     }
 
-    public Maquina update(Maquina maquina){
-        if(maquina.getId()!=null){
-            Optional<Maquina> e=metodosCrud.getMaquina(maquina.getId());
+    public Maquina update(Maquina machine){
+        if(machine.getId()!=null){
+            Optional<Maquina> e=metodosCrud.getMaquina(machine.getId());
             if(!e.isEmpty()){
-                if(maquina.getName()!=null){
-                    e.get().setName(maquina.getName());
+                if(machine.getName()!=null){
+                    e.get().setName(machine.getName());
                 }
-                if(maquina.getBrand()!=null){
-                    e.get().setBrand(maquina.getBrand());
+                if(machine.getBrand()!=null){
+                    e.get().setBrand(machine.getBrand());
                 }
-                if(maquina.getYear()!=null){
-                    e.get().setYear(maquina.getYear());
+                if(machine.getYear()!=null){
+                    e.get().setYear(machine.getYear());
                 }
-                if(maquina.getDescription()!=null){
-                    e.get().setDescription(maquina.getDescription());
+                if(machine.getDescription()!=null){
+                    e.get().setDescription(machine.getDescription());
                 }
-                if(maquina.getCategory()!=null){
-                    e.get().setCategory(maquina.getCategory());
+                if(machine.getCategory()!=null){
+                    e.get().setCategory(machine.getCategory());
                 }
                 metodosCrud.save(e.get());
                 return e.get();
             }else{
-                return maquina;
+                return machine;
             }
         }else{
-            return maquina;
+            return machine;
         }
     }
  
 
-    public boolean deleteMaquina(int maquinaId) {
-        Boolean aBoolean = getMaquina(maquinaId).map(maquina -> {
-            metodosCrud.delete(maquina);
+    public boolean deleteMaquina(int machineId) {
+        Boolean aBoolean = getMaquina(machineId).map(machine -> {
+            metodosCrud.delete(machine);
             return true;
         }).orElse(false);
         return aBoolean;

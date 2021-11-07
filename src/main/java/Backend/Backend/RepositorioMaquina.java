@@ -27,11 +27,11 @@ public class RepositorioMaquina {
         return crud.findById(id);
     }
 
-    public Maquina save(Maquina maquina){
-        return crud.save(maquina);
+    public Maquina save(Maquina machine){
+        return crud.save(machine);
     }
-    public void delete(Maquina maquina){
-        crud.delete(maquina);
+    public void delete(Maquina machine){
+        crud.delete(machine);
     }
     
 }
