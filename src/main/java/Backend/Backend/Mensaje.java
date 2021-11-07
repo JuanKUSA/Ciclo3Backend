@@ -52,11 +52,11 @@ public class Mensaje implements Serializable {
         this.messageText = messageText;
     }
 
-    public Maquina getMaquina() {
+    public Maquina getMachine() {
         return machine;
     }
 
-    public void setMaquina(Maquina machine) {
+    public void setMachine(Maquina machine) {
         this.machine = machine;
     }
 
@@ -67,5 +67,7 @@ public class Mensaje implements Serializable {
     public void setClient(Cliente client) {
         this.client = client;
     }
+
+  
      
 }

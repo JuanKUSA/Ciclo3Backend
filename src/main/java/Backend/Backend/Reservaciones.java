@@ -74,11 +74,11 @@ public class Reservaciones implements Serializable  {
         this.status = status;
     }
 
-    public Maquina getMaquina() {
+    public Maquina getMachine() {
         return machine;
     }
 
-    public void setMaquina(Maquina machine) {
+    public void setMachine(Maquina machine) {
         this.machine = machine;
     }
 
@@ -97,5 +97,7 @@ public class Reservaciones implements Serializable  {
     public void setScore(String score) {
         this.score = score;
     }
+
+  
     
 }
