@@ -34,12 +34,12 @@ public class ControladorMaquina {
      @Autowired
     private ServiciosMaquina servicio;
     @GetMapping("/all")
-    public List<Maquina> getCabin(){
+    public List<Maquina> getMaquina(){
         return servicio.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Maquina> getCabin(@PathVariable("id") int maquinaId) {
+    public Optional<Maquina> getMaquina(@PathVariable("id") int maquinaId) {
         return servicio.getMaquina(maquinaId);
     }
 
